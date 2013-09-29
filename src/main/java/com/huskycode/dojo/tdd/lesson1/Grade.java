@@ -5,11 +5,15 @@ public class Grade {
         if(score < 0) throw new Underflow();
         if(score > 100) throw new Overflow();
 
-        if (score >= 80) return 4;
-        if (score >= 70) return 3;
-        if (score >= 60) return 2;
-        if (score >= 50) return 1;
-        return 0;
+        if (score >= 80)
+            return 4;
+        else if (score >= 70)
+            return 3;
+        else if (score >= 60)
+            return 2;
+        else if (score >= 50)
+            return 1;
+        else return 0;
     }
 
     class Underflow extends RuntimeException {}
