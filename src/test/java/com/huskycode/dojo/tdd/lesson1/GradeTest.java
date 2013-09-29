@@ -36,4 +36,14 @@ public class GradeTest {
     public void whenScoreIsLessThan50_gradeIs0() {
         assertEquals(0, grade.compute(49));
     }
+
+    @Test(expected = Grade.Underflow.class)
+    public void whenScoreIsLessThan0_ThrowUnderflow() {
+        grade.compute(-1);
+    }
+
+    @Test(expected = Grade.Overflow.class)
+    public void whenScoreIsMoreThan100_ThrowOverflow() {
+        grade.compute(101);
+    }
 }
